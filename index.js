@@ -6,7 +6,7 @@ let streams = {
     orf1: { name: "ORF1", url: "http://apasfiisl.apa.at/ipad/orf1_q8c/orf.sdp/playlist.m3u8" },
     orf2: { name: "ORF2", url: "http://apasfiisl.apa.at/ipad/orf2_q6a/orf.sdp/playlist.m3u8" },
     orf3: { name: "ORF3", url: "http://apasfiisl.apa.at/ipad/orf3_q8c/orf.sdp/playlist.m3u8" },
-    orfs: { name: "ORF Sport", url: "http://apasfiisl.apa.at/ipad/orfs_q8c/orf.sdp/playlist.m3u8" },
+    orfs: { name: "ORF Sport+", url: "http://apasfiisl.apa.at/ipad/orfs_q8c/orf.sdp/playlist.m3u8" },
 }
 
 if (process.argv.length <= 2) {
