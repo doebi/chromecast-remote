@@ -12,3 +12,9 @@ A simple remote for streaming ORF livestreams to a chromecast. This was created 
  * N24
 
  More streams can easily be added.
+
+## Usage
+To start ORF2 stream on your local chromecast simply run:
+```
+./remote.js orf2
+```
