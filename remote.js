@@ -2,8 +2,6 @@
 let chromecasts = require('chromecasts')()
 let quality = ["q8c", "q6a", "q4a", "q1a"];
 
-//key: { name: "", url: "" },
-
 let streams = {
     "orf1": { name: "ORF eins", url: "http://apasfiisl.apa.at/ipad/orf1_q8c/orf.sdp/playlist.m3u8" },
     "orf2": { name: "ORF2", url: "http://apasfiisl.apa.at/ipad/orf2_q6a/orf.sdp/playlist.m3u8" },
@@ -13,6 +11,7 @@ let streams = {
     "3sat": { name: "3sat", url: "http://zdf0910-lh.akamaihd.net/i/dach10_v1@392872/master.m3u8" },
     "ard": { name: "Das Erste", url: "http://live-lh.daserste.de/i/daserste_de@91204/master.m3u8" },
     "n24": { name: "N24", url: "https://live2weltcms-lh.akamaihd.net/i/Live2WeltCMS_1@444563/index_1_av-b.m3u8" },
+    "wdr": { name: "WDR", url: "http://tvstreamgeo.wdr.de/i/wdrfs_geogeblockt@112044/index_3776_av-b.m3u8" },
 }
 
 if (process.argv.length <= 2) {
