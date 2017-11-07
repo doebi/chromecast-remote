@@ -16,7 +16,7 @@ let streams = {
 }
 
 program
-    .arguments('<stream>')
+    .arguments('<code>')
     .action(function (k) {
         key = k;
     });
@@ -24,7 +24,7 @@ program
 program.parse(process.argv);
 
 if (typeof key === 'undefined') {
-    console.log("Usage: tv <code>");
+    console.log("Usage: "+__filename+" <code>");
     console.log("-- Codes --------");
     for (let key in streams) {
         console.log(key, "-", streams[key]["name"]);
