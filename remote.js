@@ -54,9 +54,13 @@ let checkState = function(player) {
 }
 
 let connect = function(player) {
-    state = "SWITCHING";
-    player.play(streams[key]["url"], {title: streams[key]["name"]})
-    checkState(player);
+    try {
+        player.play(streams[key]["url"], {title: streams[key]["name"]})
+        checkState(player);
+    } catch(err) {
+        console.log("invalid code");
+        process.exit(-1);
+    }
 }
 
 let chromecasts = require('chromecasts')()
