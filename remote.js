@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 let program = require('commander');
 let key;
+let state = null;
 
 let streams = {
     "orf1": { name: "ORF eins", url: "http://apasfiisl.apa.at/ipad/orf1_q8c/orf.sdp/playlist.m3u8" },
@@ -15,10 +16,10 @@ let streams = {
 }
 
 program
-  .arguments('<stream>')
-  .action(function (k) {
-      key = k;
-  });
+    .arguments('<stream>')
+    .action(function (k) {
+        key = k;
+    });
 
 program.parse(process.argv);
 
@@ -31,13 +32,36 @@ if (typeof key === 'undefined') {
     process.exit(-1);
 }
 
+let checkState = function(player) {
+    setTimeout(function() {
+        player.status(function(a, b){
+            if (typeof b != 'undefined') {
+                state = b.playerState;
+                console.log(state);
+                switch(state) {
+                    case "PLAYING":
+                        process.exit(1)
+                        break;
+                    default:
+                        checkState(player);
+                        break;
+                }
+            } else {
+                connect(player);
+            }
+        });
+    }, 1000);
+}
+
+let connect = function(player) {
+    state = "SWITCHING";
+    player.play(streams[key]["url"], {title: streams[key]["name"]})
+    checkState(player);
+}
+
 let chromecasts = require('chromecasts')()
 chromecasts.on('update', function (player) {
-    player.client(function(){
-        console.log(arguments);
-    });
-    //player.status(function(a, b){
-    //    console.log(b);
-    //});
-    //player.play(streams[param]["url"], {title: streams[param]["name"]})
+    if (state == null) {
+        connect(player);
+    }
 })
