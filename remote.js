@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-let chromecasts = require('chromecasts')()
-let quality = ["q8c", "q6a", "q4a", "q1a"];
+let program = require('commander');
+let key;
 
 let streams = {
     "orf1": { name: "ORF eins", url: "http://apasfiisl.apa.at/ipad/orf1_q8c/orf.sdp/playlist.m3u8" },
@@ -14,16 +14,30 @@ let streams = {
     "wdr": { name: "WDR: Westdeutscher Rundfunk", url: "http://tvstreamgeo.wdr.de/i/wdrfs_geogeblockt@112044/index_3776_av-b.m3u8" },
 }
 
-if (process.argv.length <= 2) {
-    console.log("Usage: " + __filename + " [code]");
+program
+  .arguments('<stream>')
+  .action(function (k) {
+      key = k;
+  });
+
+program.parse(process.argv);
+
+if (typeof key === 'undefined') {
+    console.log("Usage: tv <code>");
     console.log("-- Codes --------");
     for (let key in streams) {
         console.log(key, "-", streams[key]["name"]);
     }
     process.exit(-1);
 }
-let param = process.argv[2];
 
+let chromecasts = require('chromecasts')()
 chromecasts.on('update', function (player) {
-    player.play(streams[param]["url"], {title: streams[param]["name"]})
+    player.client(function(){
+        console.log(arguments);
+    });
+    //player.status(function(a, b){
+    //    console.log(b);
+    //});
+    //player.play(streams[param]["url"], {title: streams[param]["name"]})
 })

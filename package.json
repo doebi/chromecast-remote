@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "chromecasts": "^1.9.1",
+    "commander": "^2.11.0",
     "m3u8": "0.0.7"
   }
 }
