@@ -1,6 +1,8 @@
 # ORF Chromecast Remote
 A simple remote for streaming ORF livestreams to a chromecast. This was created because of the hassle it is to start a stream on the official orf app.
 
+[![asciicast](https://asciinema.org/a/5sinGVacyhmcn1prWY8hUFqdm.png)](https://asciinema.org/a/5sinGVacyhmcn1prWY8hUFqdm)
+
 ## Currently Configured Streams
  * ORF eins
  * ORF2
