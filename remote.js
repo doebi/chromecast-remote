@@ -38,13 +38,10 @@ let checkState = function(player) {
             if (typeof b != 'undefined') {
                 state = b.playerState;
                 console.log(state);
-                switch(state) {
-                    case "PLAYING":
-                        process.exit(1)
-                        break;
-                    default:
-                        checkState(player);
-                        break;
+                if (state == "PLAYING") {
+                    process.exit(1)
+                } else {
+                    checkState(player);
                 }
             } else {
                 connect(player);
