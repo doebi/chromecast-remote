@@ -13,6 +13,11 @@ let streams = {
     "ard": { name: "Das Erste", url: "http://live-lh.daserste.de/i/daserste_de@91204/master.m3u8" },
     "n24": { name: "N24", url: "https://live2weltcms-lh.akamaihd.net/i/Live2WeltCMS_1@444563/index_1_av-b.m3u8" },
     "wdr": { name: "WDR: Westdeutscher Rundfunk", url: "http://tvstreamgeo.wdr.de/i/wdrfs_geogeblockt@112044/index_3776_av-b.m3u8" },
+
+    "34c3a": { name: "34C3 - Hall Adams", url: "http://cdn.c3voc.de/s1_native_hd.webm" },
+    "34c3b": { name: "34C3 - Hall Borg", url: "http://cdn.c3voc.de/s2_native_hd.webm" },
+    "34c3c": { name: "34C3 - Hall Clarke", url: "http://cdn.c3voc.de/s3_native_hd.webm" },
+    "34c3d": { name: "34C3 - Hall Dijkstra", url: "http://cdn.c3voc.de/s4_native_hd.webm" }
 }
 
 program
