@@ -9,8 +9,11 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^2.3.0",
     "chromecasts": "^1.9.1",
     "commander": "^2.11.0",
-    "m3u8": "0.0.7"
+    "m3u8": "0.0.7",
+    "moment": "^2.20.1",
+    "request": "^2.83.0"
   }
 }
