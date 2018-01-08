@@ -11,7 +11,6 @@ A simple remote for streaming ORF livestreams to a chromecast. This was created 
  * BR
  * 3sat
  * ARD: Das Erste
- * N24
 
  More streams can easily be added.
 
@@ -20,10 +19,10 @@ To start ORF2 stream on your local chromecast simply run:
 ```
 ./remote.js orf2
 ```
+or
+```
+./info.js orf2
+```
 
-## 34C3 Special
-added 34C3 streams (available only during the event)
-* 34c3a: Hall Adams
-* 34c3b: Hall Borg
-* 34c3c: Hall Clarke
-* 34c3d: Hall Dijkstra
+## Timetable Information
+The companion `info.js` is capable of displaying information about currently playing shows by using infos from http://json.xmltv.se/.
