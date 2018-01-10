@@ -5,6 +5,14 @@ const chalk = require('chalk');
 
 let state = null;
 
+let log = function(state) {
+    let prefix = "";
+    if (state == "PLAYING") {
+        prefix = "▶ ";
+    }
+    console.log("\u001B[1F\u001B[G\u001B[2K" + prefix + state);
+}
+
 program
     .arguments('<code>')
     .action(function (k) {
@@ -26,7 +34,7 @@ let checkState = function(player) {
         player.status(function(a, b){
             if (typeof b != 'undefined') {
                 state = b.playerState;
-                console.log(state);
+                log(state);
                 if (state == "PLAYING") {
                     process.exit(1)
                 } else {

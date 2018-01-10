@@ -33,7 +33,6 @@ function renderInfo(json, key) {
             if ("desc" in p) {
                 console.log(p.desc["de"]);
             }
-            //console.log(p);
         }
     }
 }
