@@ -25,11 +25,11 @@ function renderInfo(json, key) {
         stop = moment(p.stop, "X");
         if (start.isBefore(now) && stop.isAfter(now)) {
             console.log();
-            console.log(chalk.bold(streams[key].name));
+            console.log(chalk.bold(chalk.bgBlackBright(streams[key].name)),
+                        chalk.bold(start.format("HH:mm")), "-", chalk.bold(stop.format("HH:mm")));
             console.log(
                 p.title ? chalk.bold(chalk.green(p.title["de"])) : "",
-                p.subTitle ? chalk.green(p.subTitle["de"]) : "",
-                chalk.bold(start.format("HH:mm")), "-", chalk.bold(stop.format("HH:mm")));
+                p.subTitle ? chalk.green(p.subTitle["de"]) : "");
             if ("desc" in p) {
                 console.log(p.desc["de"]);
             }
