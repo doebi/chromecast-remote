@@ -5,14 +5,28 @@ const moment = require('moment');
 const streams = require('./streams.js');
 const chalk = require('chalk');
 
-function displayInfo(date, key) {
+function renderItem(key, p) {
+    start = moment(p.start, "X");
+    stop = moment(p.stop, "X");
+    console.log();
+    console.log(chalk.bold(chalk.bgBlackBright(streams[key].name)),
+        chalk.bold(start.format("HH:mm")), "-", chalk.bold(stop.format("HH:mm")));
+    console.log(
+        p.title ? chalk.bold(chalk.green(p.title["de"])) : "",
+        p.subTitle ? chalk.green(p.subTitle["de"]) : "");
+    if ("desc" in p) {
+        console.log(p.desc["de"]);
+    }
+}
+
+function displayInfo(date, key, num) {
     let infourl = "http://json.xmltv.se/"+streams[key]["jsontv"]+"_"+date+".js.gz";
     request(infourl, function (error, response, body) {
-        renderInfo(JSON.parse(body), key);
+        renderInfo(JSON.parse(body), key, num);
     });
 }
 
-function renderInfo(json, key) {
+function renderInfo(json, key, num) {
     let arr = json["jsontv"]["programme"];
     let now = moment();
     if (moment(arr[0].start, "X").isAfter(now)) {
@@ -24,14 +38,8 @@ function renderInfo(json, key) {
         start = moment(p.start, "X");
         stop = moment(p.stop, "X");
         if (start.isBefore(now) && stop.isAfter(now)) {
-            console.log();
-            console.log(chalk.bold(chalk.bgBlackBright(streams[key].name)),
-                        chalk.bold(start.format("HH:mm")), "-", chalk.bold(stop.format("HH:mm")));
-            console.log(
-                p.title ? chalk.bold(chalk.green(p.title["de"])) : "",
-                p.subTitle ? chalk.green(p.subTitle["de"]) : "");
-            if ("desc" in p) {
-                console.log(p.desc["de"]);
+            for (var j = 0; j < num; j++) {
+                renderItem(key, arr[i+j]);
             }
         }
     }
@@ -49,9 +57,9 @@ let date = moment().format("YYYY-MM-DD");
 if (typeof key === 'undefined') {
     // show now playing for all streams
     for (let key in streams) {
-        displayInfo(date, key);
+        displayInfo(date, key, 1);
     }
 } else {
     // show detailed info for given key
-    displayInfo(date, key);
+    displayInfo(date, key, 5);
 }
