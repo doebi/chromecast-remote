@@ -26,3 +26,5 @@ or
 
 ## Timetable Information
 The companion `info.js` is capable of displaying information about currently playing shows by using infos from http://json.xmltv.se/.
+
+![demo](https://raw.githubusercontent.com/doebi/chromecast-remote/master/img/info.png)
