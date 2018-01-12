@@ -29,8 +29,9 @@ function displayInfo(date, key, num) {
 function renderInfo(json, key, num) {
     let arr = json["jsontv"]["programme"];
     let now = moment();
+
     if (moment(arr[0].start, "X").isAfter(now)) {
-        return displayInfo(now.subtract(1, 'day').format("YYYY-MM-DD"), key);
+        return displayInfo(now.subtract(1, 'day').format("YYYY-MM-DD"), key, num);
     }
 
     for (var i = 0, len = arr.length; i < len; i++) {
@@ -39,7 +40,9 @@ function renderInfo(json, key, num) {
         stop = moment(p.stop, "X");
         if (start.isBefore(now) && stop.isAfter(now)) {
             for (var j = 0; j < num; j++) {
-                renderItem(key, arr[i+j]);
+                if (arr.length >= (i+j+1)) {
+                    renderItem(key, arr[i+j]);
+                }
             }
         }
     }
