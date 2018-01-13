@@ -5,6 +5,8 @@ const moment = require('moment');
 const streams = require('./streams.js');
 const chalk = require('chalk');
 
+let now = moment();
+
 function renderItem(key, p) {
     start = moment(p.start, "X");
     stop = moment(p.stop, "X");
@@ -22,13 +24,15 @@ function renderItem(key, p) {
 function displayInfo(date, key, num) {
     let infourl = "http://json.xmltv.se/"+streams[key]["jsontv"]+"_"+date+".js.gz";
     request(infourl, function (error, response, body) {
-        renderInfo(JSON.parse(body), key, num);
+        try {
+            renderInfo(JSON.parse(body), key, num);
+        } catch(e) {
+        }
     });
 }
 
 function renderInfo(json, key, num) {
     let arr = json["jsontv"]["programme"];
-    let now = moment();
 
     if (moment(arr[0].start, "X").isAfter(now)) {
         return displayInfo(now.subtract(1, 'day').format("YYYY-MM-DD"), key, num);
@@ -63,6 +67,11 @@ if (typeof key === 'undefined') {
         displayInfo(date, key, 1);
     }
 } else {
+    now = now.subtract(1, "hour");
     // show detailed info for given key
-    displayInfo(date, key, 5);
+    if (key in streams) {
+        displayInfo(date, key, 5);
+    } else {
+        console.log(chalk.red("unknown key"), chalk.white(chalk.bgRed(key)));
+    }
 }
