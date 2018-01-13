@@ -19,10 +19,20 @@ module.exports = {
         url: "http://apasfiisl.apa.at/ipad/orfs_q6a/orf.sdp/playlist.m3u8",
         jsontv: "sportplus.orf.at",
     },
+    "alpha": {
+        name: "ARD-alpha",
+        url: "https://brlive-lh.akamaihd.net/i/bralpha_germany@119899/master.m3u8",
+        jsontv: "br-alpha.daserste.de",
+    },
     "br": {
         name: "BR: Bayerischer Rundfunk",
         url: "http://brlive-lh.akamaihd.net/i/bfssued_worldwide@119891/master.m3u8",
-        jsontv: "br-alpha.daserste.de",
+        jsontv: "bfs.daserste.de",
+    },
+    "arte": {
+        name: "arte",
+        url: "https://arteptweb-vh.akamaihd.net/i/am/ptweb/053000/053900/053955-000-A_0_VA_AMM-PTWEB_XQ.tRwn7W31B.smil/master.m3u8",
+        jsontv: "arte.de",
     },
     "3sat": {
         name: "3sat",
