@@ -34,6 +34,38 @@ module.exports = {
         url: "https://arteptweb-vh.akamaihd.net/i/am/ptweb/053000/053900/053955-000-A_0_VA_AMM-PTWEB_XQ.tRwn7W31B.smil/master.m3u8",
         jsontv: "arte.de",
     },
+    "dw": {
+        name: "DW: Deutsche Welle",
+        url: "https://dwstream72-lh.akamaihd.net/i/dwstream72_live@123556/master.m3u8",
+        jsontv: "deutschplus.dw.de",
+    },
+    "hr": {
+        name: "HR",
+        url: "http://hrlive1-lh.akamaihd.net/i/hr_fernsehen@75910/master.m3u8",
+        jsontv: "hr.daserste.de",
+    },
+    "one": {
+        name: "ONE",
+        url: "http://onelivestream-lh.akamaihd.net/i/one_livestream@568814/master.m3u8",
+        jsontv: "",
+    },
+    /*
+    "": {
+        name: "",
+        url: "",
+        jsontv: "",
+    },
+    "": {
+        name: "",
+        url: "",
+        jsontv: "",
+    },
+    */
+    "ndr": {
+        name: "NDR",
+        url: "https://ndrfs-lh.akamaihd.net/i/ndrfs_hh@430231/master.m3u8",
+        jsontv: "ndr.daserste.de",
+    },
     "3sat": {
         name: "3sat",
         url: "http://zdf0910-lh.akamaihd.net/i/dach10_v1@392872/master.m3u8",
