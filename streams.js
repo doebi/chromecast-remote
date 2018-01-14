@@ -47,20 +47,8 @@ module.exports = {
     "one": {
         name: "ONE",
         url: "http://onelivestream-lh.akamaihd.net/i/one_livestream@568814/master.m3u8",
-        jsontv: "",
+        jsontv: "einsfestival.daserste.de",
     },
-    /*
-    "": {
-        name: "",
-        url: "",
-        jsontv: "",
-    },
-    "": {
-        name: "",
-        url: "",
-        jsontv: "",
-    },
-    */
     "ndr": {
         name: "NDR",
         url: "https://ndrfs-lh.akamaihd.net/i/ndrfs_hh@430231/master.m3u8",
@@ -81,4 +69,11 @@ module.exports = {
         url: "http://tvstreamgeo.wdr.de/i/wdrfs_geogeblockt@112044/index_3776_av-b.m3u8",
         jsontv: "wdr.daserste.de",
     },
+    /*
+    "": {
+        name: "",
+        url: "",
+        jsontv: "",
+    },
+    */
 }
