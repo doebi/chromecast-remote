@@ -16,7 +16,7 @@ function renderItem(key, p) {
     console.log(
         p.title ? chalk.bold(chalk.green(p.title["de"])) : "",
         p.subTitle ? chalk.green(p.subTitle["de"]) : "");
-    if ("desc" in p) {
+    if (program.option.description && "desc" in p) {
         console.log(p.desc["de"]);
     }
 }
@@ -54,6 +54,7 @@ function renderInfo(json, key, num) {
 
 program
     .arguments('<code>')
+    .option('-d, --description', 'Show Description')
     .action(function (k) {
         key = k;
     });
