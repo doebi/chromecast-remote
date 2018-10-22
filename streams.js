@@ -1,22 +1,22 @@
 module.exports = {
     "orf1": {
         name: "ORF eins",
-        url: "http://apasfiisl.apa.at/ipad/orf1_q6a/orf.sdp/playlist.m3u8",
+        url: "http://orf1.orfstg.cdn.ors.at/out/u/orf1/q8c/manifest.m3u8",
         jsontv: "orf1.orf.at",
     },
     "orf2": {
         name: "ORF2",
-        url: "http://apasfiisl.apa.at/ipad/orf2_q6a/orf.sdp/playlist.m3u8",
+        url: "http://orf2.orfstg.cdn.ors.at/out/u/orf2/q8c/manifest.m3u8",
         jsontv: "orf2.orf.at",
     },
     "orf3": {
         name: "ORF III Kultur und Information",
-        url: "http://apasfiisl.apa.at/ipad/orf3_q6a/orf.sdp/playlist.m3u8",
+        url: "http://orf3.orfstg.cdn.ors.at/out/u/orf3/q8c/manifest.m3u8",
         jsontv: "orf3.orf.at",
     },
     "orfs": {
         name: "ORF Sport+",
-        url: "http://apasfiisl.apa.at/ipad/orfs_q6a/orf.sdp/playlist.m3u8",
+        url: "http://orfs.orfstg.cdn.ors.at/out/u/orfs/q8c/manifest.m3u8",
         jsontv: "sportplus.orf.at",
     },
     "alpha": {
